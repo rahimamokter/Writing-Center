@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Writing-Center"
+    }
+  },
+  "defaultProject": "Writing-Center",
+  "cli": {
+    "analytics": "aa7ef7e3-b6a7-4e2d-9343-f72c72458c7b"
+  }
 }
