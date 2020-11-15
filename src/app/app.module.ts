@@ -3,20 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddTutorsComponent } from './components/add-tutors/add-tutors.component';
+
 import { TutorDetailsComponent } from './components/tutor-details/tutor-details.component';
 import { TutorListComponent } from './components/tutor-list/tutor-list.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AddTutorComponent } from './components/add-tutor/add-tutor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddTutorsComponent,
     TutorDetailsComponent,
-    TutorListComponent
+    TutorListComponent,
+    AddTutorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

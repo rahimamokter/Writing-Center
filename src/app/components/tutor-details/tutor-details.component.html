@@ -1,1 +1,68 @@
 <p>tutor-details works!</p>
+
+
+<div style="width: 400px; margin: auto;">
+    <div *ngIf="currentTutor" class="edit-form">
+      <h4>Tutor</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentTutor.title"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentTutor.description"
+            name="description"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ currentTutor.published ? "Published" : "Pending" }}
+        </div>
+      </form>
+  
+      <button
+        class="badge badge-primary mr-2"
+        *ngIf="currentTutor.published"
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+      <button
+        *ngIf="!currentTutor.published"
+        class="badge badge-primary mr-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteTutor()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updateTutor()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentTutor">
+      <br />
+      <p>Cannot access this Tutor...</p>
+    </div>
+  </div>
